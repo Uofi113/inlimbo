@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="Личная страница limbo. Rust, старое железо и психологический хоррор.">
+  <meta name="description" content="личная страница limbo. rust, игры и старые устройства apple.">
   <title>limbo // inlimbo.su</title>
   <link rel="icon" href="data:,">
   <style>
@@ -124,52 +124,50 @@
   <div class="board">
     <header>
       <p class="board-title">inlimbo.su</p>
-      <p class="board-path">Список форумов &raquo; Закрытый раздел &raquo; Архив</p>
+      <p class="board-path">список форумов &raquo; закрытый раздел &raquo; архив</p>
     </header>
 
     <main>
-      <h1 class="topic">Тема: limbo</h1>
+      <h1 class="topic">тема: limbo</h1>
       <article class="profile">
-        <div class="column-label">Автор</div>
-        <div class="column-label">Сообщение</div>
+        <div class="column-label">автор</div>
+        <div class="column-label">сообщение</div>
         <header class="profile-header">
           <p><strong>limbo</strong></p>
           <div class="avatar" aria-hidden="true"></div>
           <p class="status">меланхолия</p>
         </header>
         <div class="post">
-          <p>Я вайбкодер. Придумываю, что сделать, а код в основном пишет ИИ. Как всё устроено, разбираюсь по ходу (точнее уже почти никогда).</p>
+          <p>делаю небольшие проекты для себя. я придумываю, как они должны работать, а большую часть кода пишет ии.</p>
 
-          <h2 class="command" aria-label="Сейчас"><span class="prompt" aria-hidden="true">$</span> cat .private/now.txt</h2>
-          <p>В последнее время в основном играю. Сейчас залипаю в GTA 6.</p>
+          <h2 class="command" aria-label="сейчас"><span class="prompt" aria-hidden="true">$</span> cat .private/now.txt</h2>
+          <p>сейчас даже не сказать что делаю.</p>
 
-          <h2 class="command" aria-label="Rust"><span class="prompt" aria-hidden="true">$</span> cat .private/rust.txt</h2>
+          <h2 class="command" aria-label="rust"><span class="prompt" aria-hidden="true">$</span> cat .private/rust.txt</h2>
           <p>люблю раст больше остальных языков</p>
 
-          <h2 class="command" aria-label="Проекты"><span class="prompt" aria-hidden="true">$</span> cat .private/projects.txt</h2>
+          <h2 class="command" aria-label="проекты"><span class="prompt" aria-hidden="true">$</span> cat .private/projects.txt</h2>
           <ul role="list">
-            <li><strong>Личная скачивалка.</strong> Для видео с YouTube и других площадок, с интерфейсом под себя.</li>
-            <li><strong>Психологический хоррор.</strong> Делаю инди-хоррор на Godot.</li>
-            <li><strong>Старое железо Apple.</strong> Прошиваю iPhone 4s, SE первого поколения, 6 и iPad 2 на старые версии iOS.</li>
+            <li>сделал для себя программу для загрузки видео с youtube и других площадок.</li>
+            <li>делаю психологический хоррор на godot.</li>
+            <li>ставлю старые версии ios на iphone 4s, iphone se первого поколения, iphone 6 и ipad 2.</li>
           </ul>
 
-          <h2 class="command" aria-label="Стек"><span class="prompt" aria-hidden="true">$</span> cat .private/stack.txt</h2>
-          <p>Rust, Python, Lua, Godot, Arch Linux, Windows.</p>
-          <p>На Python пишу скрипты, парсеры, конвертеры ресурсов и бэкенд.</p>
+          <h2 class="command" aria-label="стек"><span class="prompt" aria-hidden="true">$</span> cat .private/stack.txt</h2>
+          <p>rust, python, lua, godot, arch linux, windows.</p>
           <footer class="signature">
-            <p>куд куд кудах</p>
-            <h2 class="command" aria-label="Связь"><span class="prompt" aria-hidden="true">$</span> cat .private/contact.txt</h2>
-            <p>telegram / <a id="telegram" href="https://t.me/limbo626" aria-label="Telegram-канал @limbo626">@limbo626</a></p>
+            <h2 class="command" aria-label="связь"><span class="prompt" aria-hidden="true">$</span> cat .private/contact.txt</h2>
+            <p>telegram / <a id="telegram" href="https://t.me/limbo626" aria-label="telegram-канал @limbo626">@limbo626</a></p>
             <p class="tenure">13 лет на форуме</p>
           </footer>
         </div>
       </article>
       <div class="thread-actions">
-        <button type="button" class="reply" aria-controls="reply-status" aria-expanded="false">Ответить</button>
-        <p id="reply-status" role="status" hidden>Тема закрыта.</p>
+        <button type="button" class="reply" aria-controls="reply-status" aria-expanded="false">ответить</button>
+        <p id="reply-status" role="status" hidden>тема закрыта.</p>
       </div>
       <details class="archive">
-        <summary>Архив темы</summary>
+        <summary>архив темы</summary>
         <p id="archive-status" role="status"></p>
         <div id="archive-entries"></div>
       </details>
@@ -213,14 +211,14 @@
     archive.addEventListener('toggle', async () => {
       if (!archive.open || archiveLoading) return;
       if (location.protocol === 'file:') {
-        archiveStatus.textContent = 'Архив доступен на хостинге.';
+        archiveStatus.textContent = 'архив доступен на хостинге.';
         return;
       }
       archiveLoading = true;
-      archiveStatus.textContent = 'Загрузка…';
+      archiveStatus.textContent = 'загрузка…';
       try {
         const response = await fetch('archive.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error('Архив недоступен');
+        if (!response.ok) throw new Error('архив недоступен');
         const { entries } = await response.json();
         const posts = document.createDocumentFragment();
         for (const entry of entries) {
@@ -228,7 +226,7 @@
           post.className = 'archive-entry';
           const meta = document.createElement('p');
           meta.className = 'archive-meta';
-          meta.textContent = '#' + entry.id + ' · limbo · ' + archiveDate.format(new Date(entry.created_at)) + ' UTC';
+          meta.textContent = '#' + entry.id + ' · limbo · ' + archiveDate.format(new Date(entry.created_at)) + ' utc';
           const body = document.createElement('p');
           body.className = 'archive-text';
           body.textContent = entry.text;
@@ -236,10 +234,10 @@
           posts.append(post);
         }
         archiveEntries.replaceChildren(posts);
-        archiveStatus.textContent = entries.length ? '' : 'Записей пока нет.';
+        archiveStatus.textContent = entries.length ? '' : 'записей пока нет.';
       } catch {
         archiveEntries.replaceChildren();
-        archiveStatus.textContent = 'Архив недоступен. Открой его ещё раз чуть позже.';
+        archiveStatus.textContent = 'архив недоступен.';
       } finally {
         archiveLoading = false;
       }
