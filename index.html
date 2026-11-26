@@ -219,7 +219,7 @@
 	  archiveLoading = true;
 	  archiveStatus.textContent = 'загрузка…';
 	  try {
-		const response = await fetch('archive.json', { cache: 'no-store' });
+		const response = await fetch('https://vitaliy.inlimbo.su:18443/archive.json', { cache: 'no-store' });
 		if (!response.ok) throw new Error('архив недоступен');
 		const { entries } = await response.json();
 		const posts = document.createDocumentFragment();
